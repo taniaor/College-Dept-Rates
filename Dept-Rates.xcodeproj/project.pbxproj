@@ -16,6 +16,11 @@
 		230B880421069D1100FD5687 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230B880321069D1100FD5687 /* StartScreenViewController.swift */; };
 		230B880821069D7A00FD5687 /* DiscoverSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230B880721069D7A00FD5687 /* DiscoverSearchViewController.swift */; };
 		230B880A21069D9D00FD5687 /* DisplayAllInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230B880921069D9D00FD5687 /* DisplayAllInfoViewController.swift */; };
+		23331DF42107D07B00950644 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23331DF32107D07B00950644 /* School.swift */; };
+		23331DF72107E0DC00950644 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23331DF62107E0DC00950644 /* NetworkServices.swift */; };
+		23331E04210A2B4200950644 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23331E03210A2B4200950644 /* SchoolTableViewCell.swift */; };
+		23331E0A210BD79F00950644 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23331E09210BD79F00950644 /* FavoritesTableViewCell.swift */; };
+		79FD39C438E20A79EA1F13B3 /* Pods_Dept_Rates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9C0EC4444A998BDEE15547 /* Pods_Dept_Rates.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,13 @@
 		230B880321069D1100FD5687 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		230B880721069D7A00FD5687 /* DiscoverSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSearchViewController.swift; sourceTree = "<group>"; };
 		230B880921069D9D00FD5687 /* DisplayAllInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAllInfoViewController.swift; sourceTree = "<group>"; };
+		23331DF32107D07B00950644 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		23331DF62107E0DC00950644 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
+		23331E03210A2B4200950644 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		23331E09210BD79F00950644 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		635D64F47EF4B30B0A52769B /* Pods-Dept-Rates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dept-Rates.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dept-Rates/Pods-Dept-Rates.release.xcconfig"; sourceTree = "<group>"; };
+		AE9C0EC4444A998BDEE15547 /* Pods_Dept_Rates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dept_Rates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E79E8498FFC06B536BFE4E33 /* Pods-Dept-Rates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dept-Rates.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dept-Rates/Pods-Dept-Rates.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FD39C438E20A79EA1F13B3 /* Pods_Dept_Rates.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +61,8 @@
 			children = (
 				230B87EB2106935000FD5687 /* Dept-Rates */,
 				230B87EA2106935000FD5687 /* Products */,
+				954874C1B58753CC0F4F025F /* Pods */,
+				F5B9C9D6B581CC0779EC040D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,9 +77,13 @@
 		230B87EB2106935000FD5687 /* Dept-Rates */ = {
 			isa = PBXGroup;
 			children = (
+				23331DF82107E1B800950644 /* Models */,
+				23331DF52107E0C500950644 /* Network */,
 				230B87EC2106935000FD5687 /* AppDelegate.swift */,
+				23331E09210BD79F00950644 /* FavoritesTableViewCell.swift */,
 				230B87EE2106935000FD5687 /* ViewController.swift */,
 				230B87F02106935000FD5687 /* Main.storyboard */,
+				23331E03210A2B4200950644 /* SchoolTableViewCell.swift */,
 				230B880921069D9D00FD5687 /* DisplayAllInfoViewController.swift */,
 				230B880721069D7A00FD5687 /* DiscoverSearchViewController.swift */,
 				230B880321069D1100FD5687 /* StartScreenViewController.swift */,
@@ -72,8 +91,41 @@
 				230B87F82106935000FD5687 /* LaunchScreen.storyboard */,
 				230B87FB2106935000FD5687 /* Info.plist */,
 				230B87F32106935000FD5687 /* Dept_Rates.xcdatamodeld */,
+				23331DF32107D07B00950644 /* School.swift */,
 			);
 			path = "Dept-Rates";
+			sourceTree = "<group>";
+		};
+		23331DF52107E0C500950644 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				23331DF62107E0DC00950644 /* NetworkServices.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		23331DF82107E1B800950644 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		954874C1B58753CC0F4F025F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E79E8498FFC06B536BFE4E33 /* Pods-Dept-Rates.debug.xcconfig */,
+				635D64F47EF4B30B0A52769B /* Pods-Dept-Rates.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F5B9C9D6B581CC0779EC040D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE9C0EC4444A998BDEE15547 /* Pods_Dept_Rates.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 230B87FE2106935000FD5687 /* Build configuration list for PBXNativeTarget "Dept-Rates" */;
 			buildPhases = (
+				2569E30FC30F5CEE95A08039 /* [CP] Check Pods Manifest.lock */,
 				230B87E52106935000FD5687 /* Sources */,
 				230B87E62106935000FD5687 /* Frameworks */,
 				230B87E72106935000FD5687 /* Resources */,
+				E5318AEDA73D0AB41CA724D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,16 +197,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2569E30FC30F5CEE95A08039 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dept-Rates-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5318AEDA73D0AB41CA724D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dept-Rates/Pods-Dept-Rates-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dept-Rates/Pods-Dept-Rates-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		230B87E52106935000FD5687 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23331DF42107D07B00950644 /* School.swift in Sources */,
 				230B87EF2106935000FD5687 /* ViewController.swift in Sources */,
 				230B880A21069D9D00FD5687 /* DisplayAllInfoViewController.swift in Sources */,
 				230B880821069D7A00FD5687 /* DiscoverSearchViewController.swift in Sources */,
 				230B87ED2106935000FD5687 /* AppDelegate.swift in Sources */,
+				23331E0A210BD79F00950644 /* FavoritesTableViewCell.swift in Sources */,
 				230B87F52106935000FD5687 /* Dept_Rates.xcdatamodeld in Sources */,
+				23331DF72107E0DC00950644 /* NetworkServices.swift in Sources */,
+				23331E04210A2B4200950644 /* SchoolTableViewCell.swift in Sources */,
 				230B880421069D1100FD5687 /* StartScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +387,7 @@
 		};
 		230B87FF2106935000FD5687 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E79E8498FFC06B536BFE4E33 /* Pods-Dept-Rates.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +403,7 @@
 		};
 		230B88002106935000FD5687 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 635D64F47EF4B30B0A52769B /* Pods-Dept-Rates.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

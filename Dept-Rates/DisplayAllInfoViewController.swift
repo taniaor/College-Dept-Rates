@@ -9,27 +9,33 @@
 import UIKit
 
 class DisplayAllInfoViewController: UIViewController {
-
+    
+    @IBOutlet weak var displayLocationLabel: UILabel!
+    @IBOutlet weak var displayAmountOfStudents: UILabel!
+    @IBOutlet weak var displayAceRateLabel: UILabel!
+    @IBOutlet weak var displayTuitionLabel: UILabel!
+    @IBOutlet weak var displayCityLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var school : School!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        displayLocationLabel.text = school.state
+        displayAmountOfStudents.text = school.amountOfStudents
+        displayTuitionLabel.text = ("$\(school.tuition!)")
+        displayAceRateLabel.text = school.acceptanceRate
+        displayCityLabel.text = ("\(school.city),")
+        navigationItem.title = school.name
+        imageView.image = #imageLiteral(resourceName: "make")
         // Do any additional setup after loading the view.
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
