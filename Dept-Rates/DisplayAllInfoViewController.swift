@@ -10,7 +10,6 @@ import UIKit
 
 class DisplayAllInfoViewController: UIViewController {
     
-    @IBOutlet weak var displayLocationLabel: UILabel!
     @IBOutlet weak var displayAmountOfStudents: UILabel!
     @IBOutlet weak var displayAceRateLabel: UILabel!
     @IBOutlet weak var displayTuitionLabel: UILabel!
@@ -21,16 +20,14 @@ class DisplayAllInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayLocationLabel.text = school.state
         displayAmountOfStudents.text = school.amountOfStudents
         displayTuitionLabel.text = ("$\(school.tuition!)")
-        displayAceRateLabel.text = school.acceptanceRate
-        displayCityLabel.text = ("\(school.city),")
+        displayAceRateLabel.text = String(school.acceptanceRate)
+        displayCityLabel.text = ("\(school.city), CA")
         navigationItem.title = school.name
         imageView.image = #imageLiteral(resourceName: "make")
         // Do any additional setup after loading the view.
     }
-    
 
 
     override func didReceiveMemoryWarning() {

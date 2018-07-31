@@ -95,10 +95,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsH-wT-zuP">
-                                                    <rect key="frame" x="303" y="60" width="62" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsH-wT-zuP">
+                                                    <rect key="frame" x="319" y="43" width="46" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Favorite?"/>
+                                                    <state key="normal" image="blank heart"/>
                                                     <connections>
                                                         <action selector="favoriteButtonTapped:" destination="h0m-kM-hWa" eventType="touchUpInside" id="xWe-Hi-mBc"/>
                                                     </connections>
@@ -114,6 +114,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.85902184749999999" green="1" blue="0.75435791259999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="favoriteButtonTapped" destination="DsH-wT-zuP" id="tEU-Z6-CzZ"/>
                                             <outlet property="imageOfSchool" destination="rTr-NG-uw8" id="Ecs-09-j3n"/>
                                             <outlet property="nameOfSchool" destination="Cg8-Q2-uH0" id="FIK-L4-bR4"/>
                                             <outlet property="ratingLabel" destination="pb3-Sf-fao" id="l2S-e1-faz"/>
@@ -245,13 +246,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK1-fZ-PHI">
-                                        <rect key="frame" x="123" y="8" width="75" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Acceptance Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKP-WV-hC7">
                                         <rect key="frame" x="190" y="109" width="130" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -266,17 +260,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-I4-CWR">
-                                        <rect key="frame" x="4" y="8" width="127" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In-State Tuition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNX-rj-GMO">
                                         <rect key="frame" x="243" y="37" width="100" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-I4-CWR">
+                                        <rect key="frame" x="33" y="9" width="127" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -307,7 +301,6 @@
                         <outlet property="displayAceRateLabel" destination="cEq-sK-UAq" id="isf-u6-27P"/>
                         <outlet property="displayAmountOfStudents" destination="DQx-c6-0d7" id="3Jl-9h-mJn"/>
                         <outlet property="displayCityLabel" destination="vMW-I4-CWR" id="2F1-wn-1G4"/>
-                        <outlet property="displayLocationLabel" destination="qK1-fZ-PHI" id="pbh-tz-ExM"/>
                         <outlet property="displayTuitionLabel" destination="dZM-y9-eHH" id="Xfw-JO-7jf"/>
                         <outlet property="imageView" destination="ogF-mj-hG9" id="l8d-QS-cCq"/>
                     </connections>
@@ -399,7 +392,10 @@
             <point key="canvasLocation" x="482" y="72"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blank heart" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XNt-J0-Jyo"/>
+        <segue reference="LeL-eV-Kcr"/>
     </inferredMetricsTieBreakers>
 </document>

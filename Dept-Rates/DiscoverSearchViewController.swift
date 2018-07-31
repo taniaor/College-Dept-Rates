@@ -21,6 +21,8 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
     }
+
+    var rating: String = ""
     
     // MARK: - IBOutlets
     @IBOutlet weak var searchTextField: UITextField!
@@ -30,7 +32,7 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        tableView.reloadData()
 //        tableView.delegate = self
 //        tableView.dataSource = self
         NetworkServices.getSchools { (schools) in
@@ -50,7 +52,7 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
         
         cell.nameOfSchool.text = school.name
         cell.imageOfSchool.image = #imageLiteral(resourceName: "make")
-        cell.ratingLabel.text = "10/10"
+        cell.ratingLabel.text = rating
         return cell
     }
     
@@ -76,5 +78,58 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
         //code to save to other table view controller
     }
     
-
-}
+    func creatingRating() {
+        var count = 0
+        var rating = ""
+        for overallRating in schools {
+            if overallRating.acceptanceRate <= 1 && overallRating.acceptanceRate >= 0.8 {
+                count = 1
+                } else if overallRating.acceptanceRate <= 0.79 && overallRating.acceptanceRate > 0.60 {
+                    count = 2
+                } else if overallRating.acceptanceRate <= 0.59 && overallRating.acceptanceRate > 0.40 {
+                    count = 3
+                } else if overallRating.acceptanceRate < 0.39 && overallRating.acceptanceRate > 0.20 {
+                    count = 4
+                } else {
+                    count = 5
+            }
+            if overallRating.completionRate < 1.0 && overallRating.completionRate >= 0.8 {
+                count += 5
+                } else if overallRating.completionRate <= 0.79 && overallRating.completionRate > 0.60 {
+                    count += 4
+                } else if overallRating.completionRate <= 0.59 && overallRating.completionRate > 0.40 {
+                    count += 3
+                } else if overallRating.completionRate < 0.39 && overallRating.completionRate > 0.20 {
+                    count += 2
+                } else {
+                    count += 1
+            }
+            if overallRating.retentionRate <= 1 && overallRating.retentionRate >= 0.8 {
+                count += 5
+                } else if overallRating.retentionRate <= 0.79 && overallRating.retentionRate > 0.60 {
+                    count += 4
+                } else if overallRating.retentionRate <= 0.59 && overallRating.retentionRate > 0.40 {
+                    count += 3
+                } else if overallRating.retentionRate < 0.39 && overallRating.retentionRate > 0.20 {
+                    count += 2
+                } else {
+                    count += 1
+                }
+            count = count / 3
+        }
+        if count <= 15 && count > 12{
+            rating = String(count)
+        } else if count <=  12 && count > 9 {
+            rating = String(count)
+        } else if count <= 9 && count > 6 {
+            rating = String(count)
+        } else if count <= 6 && count > 3 {
+            rating = String(count)
+        } else {
+            rating = String(count)
+        }
+        print(rating)
+    }
+    
+    
+}//class

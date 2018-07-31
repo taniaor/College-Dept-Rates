@@ -16,7 +16,7 @@ struct NetworkServices {
         
         var schools = [School]()
         
-        let apiToContact = "https://api.data.gov/ed/collegescorecard/v1/schools.json?_fields=school.name,2015.cost.tuition.in_state,2015.admissions.admission_rate.overall,school.city,school.state,2015.student.size&api_key=vE5dAJyLi2fMwtsw7dPWAuhJTR1LxMTK9MbHDTxp&_per_page=100"
+        let apiToContact = "https://api.data.gov/ed/collegescorecard/v1/schools?school.state=ca&_fields=school.name,2015.cost.tuition.in_state,2015.admissions.admission_rate.overall,school.city,2015.student.size,2015.earnings.6_yrs_after_entry.mean_earnings.middle_tercile,2015.student.retention_rate.overall.full_time,2015.completion.rate_suppressed.overall&_per_page=100&_page=0&api_key=vE5dAJyLi2fMwtsw7dPWAuhJTR1LxMTK9MbHDTxp"
         
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             
@@ -29,9 +29,7 @@ struct NetworkServices {
                     
                     for result in results {
                         let school = School(json: result)
-                        if school.amountOfStudents != "" || school.tuition != "" || school.acceptanceRate != "" {
                             schools.append(school)
-                            }
                         }
                     print(schools.count)
                     print(schools)
@@ -42,7 +40,6 @@ struct NetworkServices {
             }
         }
     }
-    
     
 }
 

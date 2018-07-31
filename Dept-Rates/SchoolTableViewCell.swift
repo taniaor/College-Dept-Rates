@@ -13,5 +13,6 @@ class SchoolTableViewCell: UITableViewCell {
     @IBOutlet weak var nameOfSchool: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var imageOfSchool: UIImageView!
+    @IBOutlet weak var favoriteButtonTapped: UIButton!
     
 }
