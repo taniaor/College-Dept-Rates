@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreData
 
 
 class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -22,12 +23,17 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
 
-    var rating: String = ""
+    var isFavorited = false
+    let image1 = UIImage(named: "blank_heart") as UIImage?
+    let image2 = UIImage(named: "filled_heart") as UIImage?
+    let image4 = UIImage(named: "star_filled") as UIImage?
+    let image5 = UIImage(named: "star_blank") as UIImage?
     
     // MARK: - IBOutlets
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var starLabel: UILabel!
+
     // MARK: View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,23 +45,19 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
             self.schools = schools
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - IBActions
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SchoolCell", for: indexPath) as! SchoolTableViewCell
         let school = schools[indexPath.row]
-        
         cell.nameOfSchool.text = school.name
         cell.imageOfSchool.image = #imageLiteral(resourceName: "make")
-        cell.ratingLabel.text = rating
+        cell.ratingLabel.text = creatingRating(school: school)
+        //cell.starLabel.text = creatingRating(school: school)
         return cell
     }
-    
+
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let school = schools[indexPath.row]
         self.performSegue(withIdentifier: "displaySchoolInfo", sender: school)
@@ -74,62 +76,74 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        //code to save to other table view controller
-    }
+//    @IBAction func heartButtonTapped(_ sender: UIButton) {
+//        if isFavorited == true {
+//            let image = UIImage(named: "blank_heart")
+//            sender.setImage(image, for: .normal)
+//        } else {
+//            let image = UIImage(named: "filled_heart")
+//            sender.setImage(image, for: .normal)
+//        }
+//        isFavorited = !isFavorited
+//        UserDefaults.standard.set(isFavorited, forKey: "isFavorited")
+//        UserDefaults.standard.synchronize()
+//    }
     
-    func creatingRating() {
+    
+
+    func creatingRating(school: School) -> String {
         var count = 0
         var rating = ""
-        for overallRating in schools {
-            if overallRating.acceptanceRate <= 1 && overallRating.acceptanceRate >= 0.8 {
-                count = 1
-                } else if overallRating.acceptanceRate <= 0.79 && overallRating.acceptanceRate > 0.60 {
-                    count = 2
-                } else if overallRating.acceptanceRate <= 0.59 && overallRating.acceptanceRate > 0.40 {
-                    count = 3
-                } else if overallRating.acceptanceRate < 0.39 && overallRating.acceptanceRate > 0.20 {
-                    count = 4
-                } else {
-                    count = 5
-            }
-            if overallRating.completionRate < 1.0 && overallRating.completionRate >= 0.8 {
-                count += 5
-                } else if overallRating.completionRate <= 0.79 && overallRating.completionRate > 0.60 {
-                    count += 4
-                } else if overallRating.completionRate <= 0.59 && overallRating.completionRate > 0.40 {
-                    count += 3
-                } else if overallRating.completionRate < 0.39 && overallRating.completionRate > 0.20 {
-                    count += 2
-                } else {
-                    count += 1
-            }
-            if overallRating.retentionRate <= 1 && overallRating.retentionRate >= 0.8 {
-                count += 5
-                } else if overallRating.retentionRate <= 0.79 && overallRating.retentionRate > 0.60 {
-                    count += 4
-                } else if overallRating.retentionRate <= 0.59 && overallRating.retentionRate > 0.40 {
-                    count += 3
-                } else if overallRating.retentionRate < 0.39 && overallRating.retentionRate > 0.20 {
-                    count += 2
-                } else {
-                    count += 1
-                }
-            count = count / 3
-        }
-        if count <= 15 && count > 12{
-            rating = String(count)
-        } else if count <=  12 && count > 9 {
-            rating = String(count)
-        } else if count <= 9 && count > 6 {
-            rating = String(count)
-        } else if count <= 6 && count > 3 {
-            rating = String(count)
+        let acp = (100*school.acceptanceRate)
+        let ret = (100*school.retentionRate)
+        let comp = (100*school.completionRate)
+        if acp == 0 {
+            count = 1
+        } else if acp <= 100 && acp > 80{
+            count = 1
+        } else if acp <= 80 && acp > 60 {
+            count = 2
+        } else if acp <= 60 && acp > 40 {
+            count = 3
+        } else if acp <= 40 && acp > 20 {
+            count = 4
         } else {
-            rating = String(count)
+            count = 5
         }
-        print(rating)
+        if ret == 0 {
+            count += 1
+        } else if ret <= 100 && ret > 90 {
+            count += 5
+        } else if ret <= 90 && ret > 80 {
+            count += 4
+        } else if ret <= 80 && ret > 70 {
+            count += 3
+        } else if ret <= 70 && ret > 60 {
+            count += 2
+        } else {
+            count += 1
+        }
+        if comp == 0 {
+            count += 1
+        } else if comp <= 100 && comp > 90 {
+            count += 5
+        } else if comp <= 90 && comp > 80 {
+            count += 4
+        } else if comp <= 80 && comp > 70 {
+            count += 3
+        } else if comp <= 70 && comp > 60 {
+            count += 2
+        } else {
+            count += 1
+        }
+        count = count / 3
+        rating = String(count)
+        return rating
     }
     
+//    func createImage(rating: String) -> UIImage {
+//
+//    }
     
+
 }//class

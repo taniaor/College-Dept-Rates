@@ -88,23 +88,20 @@
                                                     <rect key="frame" x="0.0" y="11" width="144" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pb3-Sf-fao">
-                                                    <rect key="frame" x="152" y="75" width="118" height="40"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsH-wT-zuP">
+                                                    <rect key="frame" x="319" y="41" width="46" height="46"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="blank_heart"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg8-Q2-uH0">
+                                                    <rect key="frame" x="152" y="0.0" width="213" height="63"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsH-wT-zuP">
-                                                    <rect key="frame" x="319" y="43" width="46" height="46"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="blank heart"/>
-                                                    <connections>
-                                                        <action selector="favoriteButtonTapped:" destination="h0m-kM-hWa" eventType="touchUpInside" id="xWe-Hi-mBc"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg8-Q2-uH0">
-                                                    <rect key="frame" x="152" y="0.0" width="213" height="63"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pb3-Sf-fao">
+                                                    <rect key="frame" x="152" y="84" width="118" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -114,7 +111,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.85902184749999999" green="1" blue="0.75435791259999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="favoriteButtonTapped" destination="DsH-wT-zuP" id="tEU-Z6-CzZ"/>
+                                            <outlet property="heartButton" destination="DsH-wT-zuP" id="ZVe-xI-XhA"/>
                                             <outlet property="imageOfSchool" destination="rTr-NG-uw8" id="Ecs-09-j3n"/>
                                             <outlet property="nameOfSchool" destination="Cg8-Q2-uH0" id="FIK-L4-bR4"/>
                                             <outlet property="ratingLabel" destination="pb3-Sf-fao" id="l2S-e1-faz"/>
@@ -309,10 +306,10 @@
             </objects>
             <point key="canvasLocation" x="1976.8" y="379.16041979010498"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites View Controller-->
         <scene sceneID="Azc-gq-bHJ">
             <objects>
-                <viewController id="wcN-sM-8Op" sceneMemberID="viewController">
+                <viewController id="wcN-sM-8Op" customClass="FavoritesViewController" customModule="Dept_Rates" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XXS-e2-1as">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -393,7 +390,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="blank heart" width="32" height="32"/>
+        <image name="blank_heart" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LeL-eV-Kcr"/>

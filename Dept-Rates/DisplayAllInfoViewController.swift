@@ -20,9 +20,9 @@ class DisplayAllInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayAmountOfStudents.text = school.amountOfStudents
+        displayAmountOfStudents.text = ("\(school.amountOfStudents)")
         displayTuitionLabel.text = ("$\(school.tuition!)")
-        displayAceRateLabel.text = String(school.acceptanceRate)
+        displayAceRateLabel.text = ("\(school.acceptanceRate)")
         displayCityLabel.text = ("\(school.city), CA")
         navigationItem.title = school.name
         imageView.image = #imageLiteral(resourceName: "make")

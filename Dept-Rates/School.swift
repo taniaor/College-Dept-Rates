@@ -15,7 +15,7 @@ struct School: Codable {
     let city: String
     let state: String
     let tuition: String?
-    var amountOfStudents: String?
+    var amountOfStudents: String!
     let acceptanceRate: Double
     let retentionRate: Double
     let completionRate: Double
@@ -25,7 +25,7 @@ struct School: Codable {
     init(json: JSON) {
         self.name = json["school.name"].stringValue
         self.tuition = json["2015.cost.tuition.in_state"].stringValue
-        self.acceptanceRate = json["2015.admissions.admission_rate.overall"].doubleValue
+        self.acceptanceRate = (json["2015.admissions.admission_rate.overall"].doubleValue)
         self.city = json["school.city"].stringValue
         self.state = json["school.state"].stringValue
         self.amountOfStudents = json["2015.student.size"].stringValue
