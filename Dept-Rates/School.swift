@@ -12,7 +12,7 @@ import SwiftyJSON
 struct School: Codable {
     
     let majorsInString: [String] = ["education", "engineering", "biological", "business_marketing", "psychology"]
-    let niceMajors: [String] = ["Education", "Engineering", "Biological", "Business", "Psychology"]
+    let niceMajors: [String] = ["Education", "Engineering", "Biology", "Business", "Psychology"]
     
     var majors: [String:String] = [:]
     var name: String
@@ -59,7 +59,7 @@ struct School: Codable {
         }
         
         self.schoolURL = "https://logo.clearbit.com/\(url)"
-        print(self.schoolURL)
+//        print(self.schoolURL)
         
     }
     

@@ -86,8 +86,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6X8-zH-1vI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDI-f7-ZjY">
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWC-3X-3C8">
+                                        <rect key="frame" x="247" y="0.0" width="64" height="40"/>
+                                        <color key="backgroundColor" red="0.4431372549" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="PRQ-2y-R9z"/>
+                                        </constraints>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="h0m-kM-hWa" eventType="touchUpInside" id="YhJ-ct-bKX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCG-tJ-4y8">
+                                        <rect key="frame" x="311" y="0.0" width="64" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="b4I-Cq-gme"/>
+                                        </constraints>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" red="0.4431372549" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetButtonTapped:" destination="h0m-kM-hWa" eventType="touchUpInside" id="e37-UA-bWh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jyD-CV-H7P"/>
+                                </constraints>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZP-Zl-nti">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SchoolCell" id="01l-ba-SX3" customClass="SchoolTableViewCell" customModule="Dept_Rates" customModuleProvider="target">
@@ -98,7 +139,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ecf-EY-7Iz">
-                                                    <rect key="frame" x="-1" y="-5" width="377" height="144"/>
+                                                    <rect key="frame" x="-1" y="-5" width="345" height="144"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rTr-NG-uw8">
                                                             <rect key="frame" x="0.0" y="0.0" width="168" height="142"/>
@@ -114,10 +155,10 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jhN-Ht-9UY">
-                                                            <rect key="frame" x="168" y="0.0" width="209" height="144"/>
+                                                            <rect key="frame" x="168" y="0.0" width="177" height="144"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dominican College Of California" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg8-Q2-uH0">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="209" height="80"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="80"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="80" id="hhl-fH-sZm"/>
                                                                     </constraints>
@@ -126,7 +167,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4to-t1-xPn">
-                                                                    <rect key="frame" x="45.5" y="80" width="118" height="64"/>
+                                                                    <rect key="frame" x="29.5" y="80" width="118" height="64"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4m-e5-yX9">
                                                                             <rect key="frame" x="0.0" y="0.0" width="57" height="64"/>
@@ -185,24 +226,21 @@
                                     <outlet property="delegate" destination="h0m-kM-hWa" id="oSi-k0-hcd"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GfO-sJ-txZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GfO-sJ-txZ" firstAttribute="trailing" secondItem="i4m-Qj-es2" secondAttribute="trailing" id="1gm-rf-gHx"/>
-                            <constraint firstItem="dZP-Zl-nti" firstAttribute="leading" secondItem="i4m-Qj-es2" secondAttribute="leading" id="Af0-qG-Bcv"/>
-                            <constraint firstItem="i4m-Qj-es2" firstAttribute="trailing" secondItem="dZP-Zl-nti" secondAttribute="trailing" id="LFr-ic-lLJ"/>
-                            <constraint firstItem="GfO-sJ-txZ" firstAttribute="top" secondItem="i4m-Qj-es2" secondAttribute="top" id="OoQ-kj-kZZ"/>
-                            <constraint firstItem="i4m-Qj-es2" firstAttribute="bottom" secondItem="dZP-Zl-nti" secondAttribute="bottom" id="XSc-3b-5Dv"/>
-                            <constraint firstItem="GfO-sJ-txZ" firstAttribute="leading" secondItem="i4m-Qj-es2" secondAttribute="leading" id="qdB-P9-Xd4"/>
-                            <constraint firstItem="dZP-Zl-nti" firstAttribute="top" secondItem="GfO-sJ-txZ" secondAttribute="bottom" id="yba-Rm-Ql4"/>
+                            <constraint firstItem="dZP-Zl-nti" firstAttribute="top" secondItem="6X8-zH-1vI" secondAttribute="bottom" id="5LY-Tn-xRU"/>
+                            <constraint firstItem="i4m-Qj-es2" firstAttribute="trailing" secondItem="dZP-Zl-nti" secondAttribute="trailing" id="6Su-Tt-hfK"/>
+                            <constraint firstItem="6X8-zH-1vI" firstAttribute="top" secondItem="i4m-Qj-es2" secondAttribute="top" id="6kM-YC-5I9"/>
+                            <constraint firstItem="dZP-Zl-nti" firstAttribute="leading" secondItem="i4m-Qj-es2" secondAttribute="leading" id="Pqh-5b-StF"/>
+                            <constraint firstItem="dZP-Zl-nti" firstAttribute="bottom" secondItem="i4m-Qj-es2" secondAttribute="bottom" id="m54-Ws-MuL"/>
+                            <constraint firstItem="i4m-Qj-es2" firstAttribute="trailing" secondItem="6X8-zH-1vI" secondAttribute="trailing" id="qib-ut-Bcz"/>
+                            <constraint firstItem="dZP-Zl-nti" firstAttribute="top" secondItem="6X8-zH-1vI" secondAttribute="bottom" id="vYh-gF-DmP"/>
+                            <constraint firstItem="6X8-zH-1vI" firstAttribute="leading" secondItem="i4m-Qj-es2" secondAttribute="leading" id="wSW-sL-eeD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i4m-Qj-es2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dream Schools" id="7hC-2Z-N4I">
-                        <barButtonItem key="leftBarButtonItem" title="Filter" id="v4Q-yS-GdI"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="qeR-KO-e4o">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i3d-dD-kFk">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -216,8 +254,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="aboutButton" destination="qeR-KO-e4o" id="cSZ-dt-Opi"/>
-                        <outlet property="schoolsTableView" destination="dZP-Zl-nti" id="xEG-Py-bB7"/>
-                        <outlet property="searchBarButton" destination="GfO-sJ-txZ" id="hVD-ZH-RbJ"/>
+                        <outlet property="searchButton" destination="OWC-3X-3C8" id="aMT-k1-GPo"/>
+                        <outlet property="searchTextField" destination="bDI-f7-ZjY" id="ktF-gr-e65"/>
                         <outlet property="tableView" destination="dZP-Zl-nti" id="ccM-SC-mti"/>
                         <segue destination="fwz-Si-vFM" kind="show" identifier="displaySchoolInfo" id="LeL-eV-Kcr"/>
                     </connections>
@@ -270,7 +308,7 @@
                                     <constraint firstAttribute="height" constant="171" id="hsB-aT-zqm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Department Ratings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs6-Eh-hrZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student/Major Ratio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs6-Eh-hrZ">
                                 <rect key="frame" x="16" y="408" width="343" height="19.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -363,7 +401,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbX-S7-bWK">
-                                <rect key="frame" x="0.0" y="435" width="375" height="232"/>
+                                <rect key="frame" x="0.0" y="435.5" width="375" height="231.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="majorCell" id="PvL-3x-N7w" customClass="MajorTableViewCell" customModule="Dept_Rates" customModuleProvider="target">
@@ -461,7 +499,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DHm-eu-dxc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.1137254902" green="0.68235294120000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

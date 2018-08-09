@@ -19,7 +19,6 @@
 		23331DF72107E0DC00950644 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23331DF62107E0DC00950644 /* NetworkServices.swift */; };
 		23331E04210A2B4200950644 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23331E03210A2B4200950644 /* SchoolTableViewCell.swift */; };
 		23331E0A210BD79F00950644 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23331E09210BD79F00950644 /* FavoritesTableViewCell.swift */; };
-		235E209621112232009D4E22 /* school.json in Resources */ = {isa = PBXBuildFile; fileRef = 235E209521112232009D4E22 /* school.json */; };
 		235E209C21139E6E009D4E22 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E209B21139E6E009D4E22 /* CoreDataHelper.swift */; };
 		236C5E552118BF8C00B84674 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C5E542118BF8C00B84674 /* MajorTableViewCell.swift */; };
 		79FD39C438E20A79EA1F13B3 /* Pods_Dept_Rates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9C0EC4444A998BDEE15547 /* Pods_Dept_Rates.framework */; };
@@ -40,7 +39,6 @@
 		23331DF62107E0DC00950644 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		23331E03210A2B4200950644 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
 		23331E09210BD79F00950644 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
-		235E209521112232009D4E22 /* school.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = school.json; path = "../../../JSON-API-Swift-Starter-swift4/API-Sandbox/JSON/school.json"; sourceTree = "<group>"; };
 		235E209B21139E6E009D4E22 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		236C5E542118BF8C00B84674 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
 		635D64F47EF4B30B0A52769B /* Pods-Dept-Rates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dept-Rates.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dept-Rates/Pods-Dept-Rates.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 		230B87EB2106935000FD5687 /* Dept-Rates */ = {
 			isa = PBXGroup;
 			children = (
-				23331DF82107E1B800950644 /* Models */,
 				23331DF52107E0C500950644 /* Network */,
 				230B87EC2106935000FD5687 /* AppDelegate.swift */,
 				23331E09210BD79F00950644 /* FavoritesTableViewCell.swift */,
@@ -107,14 +104,6 @@
 				235E209B21139E6E009D4E22 /* CoreDataHelper.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		23331DF82107E1B800950644 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				235E209521112232009D4E22 /* school.json */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		954874C1B58753CC0F4F025F /* Pods */ = {
@@ -196,7 +185,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				230B87FA2106935000FD5687 /* LaunchScreen.storyboard in Resources */,
-				235E209621112232009D4E22 /* school.json in Resources */,
 				230B87F72106935000FD5687 /* Assets.xcassets in Resources */,
 				230B87F22106935000FD5687 /* Main.storyboard in Resources */,
 			);
