@@ -24,21 +24,33 @@ Navigation Controller
 #Weekly Milestone
 ## Week 4 - Usable Build
 [List of tasks needed to be complete before you can start user testing]
+
 -Background Research
+
 -Connection to government API  
+
 -Establish basic UI 
+
 -Create all files needed
 
 ## Week 5 - Finish Features
 [List of tasks to complete the implementation of features]
+
 -Implementation of Clearbit API
+
 -Finish Table Views
+
 -Finish Credits Page 
 
 ## Week 6 - Polish
 [List of tasks needed to polish and ship to the app store]
+
 -Search Bar Implementation
+
 -Constraints
+
 -Logo
+
 -UI/UX 
+
 -Shipping to App Store
