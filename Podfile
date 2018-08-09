@@ -8,5 +8,7 @@ target 'Dept-Rates' do
   # Pods for Dept-Rates
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'Kingfisher', '~> 4.0'
+
 
 end
