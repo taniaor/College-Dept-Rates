@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZP-Zl-nti">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SchoolCell" id="01l-ba-SX3" customClass="SchoolTableViewCell" customModule="Dept_Rates" customModuleProvider="target">
@@ -185,16 +185,24 @@
                                     <outlet property="delegate" destination="h0m-kM-hWa" id="oSi-k0-hcd"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GfO-sJ-txZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="GfO-sJ-txZ" firstAttribute="trailing" secondItem="i4m-Qj-es2" secondAttribute="trailing" id="1gm-rf-gHx"/>
                             <constraint firstItem="dZP-Zl-nti" firstAttribute="leading" secondItem="i4m-Qj-es2" secondAttribute="leading" id="Af0-qG-Bcv"/>
                             <constraint firstItem="i4m-Qj-es2" firstAttribute="trailing" secondItem="dZP-Zl-nti" secondAttribute="trailing" id="LFr-ic-lLJ"/>
+                            <constraint firstItem="GfO-sJ-txZ" firstAttribute="top" secondItem="i4m-Qj-es2" secondAttribute="top" id="OoQ-kj-kZZ"/>
                             <constraint firstItem="i4m-Qj-es2" firstAttribute="bottom" secondItem="dZP-Zl-nti" secondAttribute="bottom" id="XSc-3b-5Dv"/>
-                            <constraint firstItem="dZP-Zl-nti" firstAttribute="top" secondItem="i4m-Qj-es2" secondAttribute="top" id="nBO-ej-xWH"/>
+                            <constraint firstItem="GfO-sJ-txZ" firstAttribute="leading" secondItem="i4m-Qj-es2" secondAttribute="leading" id="qdB-P9-Xd4"/>
+                            <constraint firstItem="dZP-Zl-nti" firstAttribute="top" secondItem="GfO-sJ-txZ" secondAttribute="bottom" id="yba-Rm-Ql4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i4m-Qj-es2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dream Schools" id="7hC-2Z-N4I">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="v4Q-yS-GdI"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="qeR-KO-e4o">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i3d-dD-kFk">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
@@ -209,6 +217,7 @@
                     <connections>
                         <outlet property="aboutButton" destination="qeR-KO-e4o" id="cSZ-dt-Opi"/>
                         <outlet property="schoolsTableView" destination="dZP-Zl-nti" id="xEG-Py-bB7"/>
+                        <outlet property="searchBarButton" destination="GfO-sJ-txZ" id="hVD-ZH-RbJ"/>
                         <outlet property="tableView" destination="dZP-Zl-nti" id="ccM-SC-mti"/>
                         <segue destination="fwz-Si-vFM" kind="show" identifier="displaySchoolInfo" id="LeL-eV-Kcr"/>
                     </connections>
@@ -353,7 +362,7 @@
                                     <constraint firstItem="kn0-DA-Am5" firstAttribute="width" secondItem="fBy-xc-aWp" secondAttribute="width" id="6uW-nj-ERB"/>
                                 </constraints>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbX-S7-bWK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XbX-S7-bWK">
                                 <rect key="frame" x="0.0" y="435" width="375" height="232"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>

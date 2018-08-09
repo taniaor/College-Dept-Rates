@@ -13,11 +13,8 @@ import CoreData
 import Kingfisher
 
 
-class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DiscoverSearchViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var aboutButton: UIBarButtonItem!
-    
-    
     // MARK: - Properties
     var schools = [School]() {
         didSet {
@@ -26,16 +23,18 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
             }
         }
     }
+    var searchController  = UISearchController()
+    var resultsController = UITableViewController()
+    var filteredSchools = [School]()
     
+    // Outlets
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var aboutButton: UIBarButtonItem!
+    @IBOutlet weak var searchBarButton: UISearchBar!
     @IBOutlet weak var schoolsTableView: UITableView!
     
 
 //    var isFavorited = false
-    
-    
-    // MARK: - IBOutlets
-    @IBOutlet weak var tableView: UITableView!
-    
     
     // MARK: View Methods
     override func viewDidLoad() {
@@ -50,24 +49,62 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
 //            NetworkServices.getSchoolLogos(schools: schools)
         }
         
+        searchController = UISearchController(searchResultsController: resultsController)
+        schoolsTableView.tableHeaderView = searchController.searchBar
         
-        
+        searchController.searchResultsUpdater = self
+        resultsController.tableView.delegate = self
+        resultsController.tableView.dataSource = self
         
     }
     
-    // MARK: - IBActions
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredSchools = schools.filter ( { (school: School) -> Bool in
+            if let input = searchController.searchBar.text {
+                if school.name.contains(input) {
+                    return true
+                }
+            }
+            return false
+        })
+        
+        schoolsTableView.reloadData()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if schoolsTableView == resultsController.tableView {
+            return filteredSchools.count
+        } else {
+            return schools.count
+        }
+    }
+    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SchoolCell", for: indexPath) as! SchoolTableViewCell
-        let school = schools[indexPath.row]
-        cell.school = school
-//        let imageURL = school.schoolURL
-//        cell.imageOfSchool.kf.setImage(with: imageURL as? Resource)
-
-        let url = URL(string: school.schoolURL)
-        cell.imageOfSchool.kf.setImage(with: url)
-        cell.imageOfSchool.layer.masksToBounds = true
-        cell.imageOfSchool.layer.cornerRadius = 15
-//        cell.heartButton.tag = indexPath.row
+        if schoolsTableView == resultsController.tableView {
+            let school = filteredSchools[indexPath.row]
+            cell.school = school
+            let url = URL(string: school.schoolURL)
+            cell.imageOfSchool.kf.setImage(with: url)
+            //cell.imageOfSchool.layer.masksToBounds = true
+            //cell.imageOfSchool.layer.cornerRadius = 15
+        } else {
+            let school = schools[indexPath.row]
+            cell.school = school
+            let url = URL(string: school.schoolURL)
+            cell.imageOfSchool.kf.setImage(with: url)
+            //cell.imageOfSchool.layer.masksToBounds = true
+            //cell.imageOfSchool.layer.cornerRadius = 15
+        }
+        //let school = schools[indexPath.row]
+//        cell.school = school
+//        let url = URL(string: school.schoolURL)
+//        cell.imageOfSchool.kf.setImage(with: url)
+//        cell.imageOfSchool.layer.masksToBounds = true
+//        cell.imageOfSchool.layer.cornerRadius = 15
+     //   cell.heartButton.tag = indexPath.row
         
 //        cell.heartButton.addTarget(self, action: #selector(printSchool), for: .touchUpInside)
         
@@ -89,15 +126,13 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
 //
 //    }
 
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let school = schools[indexPath.row]
         self.performSegue(withIdentifier: "displaySchoolInfo", sender: school)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return schools.count
-    }
+
     
     func SchoolTableViewCellDidTapHeart(_ sender: SchoolTableViewCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }

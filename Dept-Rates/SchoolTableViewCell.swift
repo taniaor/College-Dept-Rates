@@ -23,7 +23,6 @@ class SchoolTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var imageOfSchool: UIImageView!
     @IBOutlet weak var heartButton: UIButton!
-    
     var isFavorited = false
     
     
