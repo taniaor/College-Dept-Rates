@@ -1,5 +1,5 @@
 # College Dept Rates
-An iOS App that allows prospective students to speed up their college selection process by browsing through a list of potential colleges in California. This app is different than other college search engines because it allows prospectives to know what majors are the most popular in the selected college. It also creates an overall rating system based on the current students' satisfication with their institution. 
+An iOS App specifically made for the iPhone that allows prospective students to speed up their college selection process by browsing through a list of potential colleges in California. This app is different than other college search engines because it allows prospectives to know what majors are the most popular in the selected college. It also creates an overall rating system based on the current students' satisfication with their institution. 
 
 ## Audience
 This app is geared towards high school seniors and potential college transfers who want quick access to institutions of their choice. 
