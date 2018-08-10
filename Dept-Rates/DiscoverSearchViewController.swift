@@ -13,7 +13,7 @@ import CoreData
 import Kingfisher
 
 
-class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     // MARK: - Properties
     var schools = [School]()
@@ -53,6 +53,17 @@ class DiscoverSearchViewController: UIViewController, UITableViewDelegate, UITab
         })
         tableView.reloadData()
     }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
     
     // MARK: - IBActions
     

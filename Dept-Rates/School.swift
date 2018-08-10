@@ -31,7 +31,7 @@ struct School: Codable {
         if json["2015.cost.tuition.in_state"] == JSON.null {
             self.tuition = "Not Avaliable"
         } else {
-            self.tuition = json["2015.cost.tuition.in_state"].stringValue
+            self.tuition = "$\(json["2015.cost.tuition.in_state"].stringValue)"
         }
         self.acceptanceRate = json["2015.admissions.admission_rate.overall"].doubleValue
         self.city = json["school.city"].stringValue
@@ -46,10 +46,10 @@ struct School: Codable {
         
         for major in majorsInString {
             let majorRating = json["2015.academics.program_percentage.\(major)"]
-            if  majorRating == JSON.null {
-                self.majors[niceMajors[majorsInString.index(of: major)!]] = "Not Avaliable"
+            if  majorRating == JSON.null || majorRating == 0{
+                self.majors[niceMajors[majorsInString.index(of: major)!]] = "Major Not Offered"
             } else {
-                self.majors[niceMajors[majorsInString.index(of: major)!]] = String(Int(majorRating.doubleValue * 100))
+                self.majors[niceMajors[majorsInString.index(of: major)!]] = (String(Int(majorRating.doubleValue * 100)) + "%")
             }
         }
         

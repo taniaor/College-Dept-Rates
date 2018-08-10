@@ -14,7 +14,7 @@ class SchoolTableViewCell: UITableViewCell {
         didSet {
             nameOfSchool.text = school?.name
             ratingLabel.text = creatingRating(school: school!)
-            imageOfSchool.image = #imageLiteral(resourceName: "make")
+            imageOfSchool.image = #imageLiteral(resourceName: "finalbear")
             
         }
     }
@@ -22,29 +22,6 @@ class SchoolTableViewCell: UITableViewCell {
     @IBOutlet weak var nameOfSchool: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var imageOfSchool: UIImageView!
-    @IBOutlet weak var heartButton: UIButton!
-    
-    var isFavorited = false
-    
-    
-    //weak var delegate: SchoolTableViewCellDelegate?
-    
-    
-//    @IBAction func heartTapped(_ sender: UIButton) {
-////        var newCoreDataSchool = CoreDataHelper.newSchool()
-////        newCoreDataSchool.acceptanceRate = school!.acceptanceRate
-////        newCoreDataSchool.rententionRate = school!.retentionRate
-////        newCoreDataSchool.amountOfStudents = school?.amountOfStudents
-////        newCoreDataSchool.name = school!.name
-////        newCoreDataSchool.city = school!.city
-////        newCoreDataSchool.completionRate = school!.completionRate
-////        newCoreDataSchool.state = school!.state
-////        newCoreDataSchool.tuition = school!.tuition
-////        newCoreDataSchool.isFavorited = school!.isFavorited
-////        CoreDataHelper.saveSchool()
-////        print()
-//        //delegate?.SchoolTableViewCellDidTapHeart(self)
-//    }
     
 }
 

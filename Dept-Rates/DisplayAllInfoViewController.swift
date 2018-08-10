@@ -29,16 +29,19 @@ class DisplayAllInfoViewController: UIViewController, UITableViewDataSource, UIT
             let studentSize = String(school.amountOfStudents)
             let accRate = 100*(school.acceptanceRate)
             displayAmountOfStudents.text = ("\(studentSize)")
-            displayTuitionLabel.text = ("\(school.tuition!)")
             displayAceRateLabel.text = ("\(accRate)%")
             displayCityLabel.text = ("\(school.city), CA")
             navigationItem.title = school.name
-            imageView.image = #imageLiteral(resourceName: "make")
+            imageView.image = #imageLiteral(resourceName: "finalbear")
             for major in school.majors.keys {
                 majorArray.append(major)
             }
             let url = URL(string: school.schoolURL)
             imageView.kf.setImage(with: url)
+            if let tuition = school.tuition {
+                displayTuitionLabel.text = ("\(tuition)")
+            }
+            tabBarItem.title = school.name
         }
         else {
             print("No school found")
@@ -47,13 +50,9 @@ class DisplayAllInfoViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "majorCell", for: indexPath) as! MajorTableViewCell
-        
         let key = majorArray[indexPath.row]
-        
         cell.majorLabel.text = key
-        cell.majorRatingLabel.text = school?.majors[key]
-
-        
+        cell.majorRatingLabel.text = (school?.majors[key])!
         return cell
     }
     
@@ -61,18 +60,6 @@ class DisplayAllInfoViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return majorArray.count
     }
-    
-//    func createMajorRating(school: School) -> String {
-//        let business = (100*(school.businessSize))
-//        let psych = (100*(school.psychologySize))
-//        let education = (100*(school.educationSize))
-//        let biology = (100*(school.biologySize))
-//        let engineering = (100*(school.engineeringSize))
-//        if business >= 90 {
-//            business == 1
-//        }
-//        return
-//    }
     
     
 }
